@@ -1,0 +1,17 @@
+{
+    "product" : [
+        {
+            "name" : "",
+            "brand": "",
+            "price" : "",
+            "diskon" : "",
+            "des" : "",
+            "img" : "",
+            "detail" : {
+                "titleSpan" : ["Mans Clothing","New","Soft"],
+                "count" : "",
+                "category" : ""
+            }
+        }
+    ]
+}
