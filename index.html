@@ -21,11 +21,7 @@
 
     <div id="app">
 
-        <button @click="testApi('jewelry')">klik</button>
-        <div v-for="(data, index) in dataApi.data">
-            <img :src="data.image" alt="">
-            <p>{{ data.title }}</p>
-        </div>
+        
     </div>
 
 
@@ -42,13 +38,6 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    form: {
-                        kota: "",
-                        provinsi: ""
-                    },
-                    toggle: {
-                        rules: false
-                    },
                     dataApi: {
                         url: "https://cuaca-gempa-rest-api.vercel.app/weather/",
                         data: [
@@ -57,18 +46,12 @@
                         place: null,
 
                     },
-                    dataTW: {
-                        village: 15000,
-                        city: 2000,
-                        country: 67,
-                        review: 20089
-                    }
                 }
             },
             methods: {
 
                 testApi(req) {
-                    const url = "data.json";
+                    const url = "data/data.json";
                     axios.get(url, {
                         params : {
 

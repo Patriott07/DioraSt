@@ -1,17 +1,530 @@
 {
     "product" : [
         {
-            "name" : "",
-            "brand": "",
-            "price" : "",
-            "diskon" : "",
-            "des" : "",
-            "img" : "",
-            "detail" : {
-                "titleSpan" : ["Mans Clothing","New","Soft"],
-                "count" : "",
-                "category" : ""
-            }
-        }
+            "SEPATU":[
+                {
+                    "name": "Classic Leather Sneakers",
+                    "brand": "CasualComforts",
+                    "price": 180000,
+                    "discount": 10,
+                    "description": "Classic and versatile leather sneakers for a casual and trendy look. Made with high-quality leather material.",
+                    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "count": 41,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Sporty Running Shoes",
+                    "brand": "ActiveSports",
+                    "price": 220000,
+                    "discount": 10,
+                    "description": "Sporty and performance-driven running shoes for active individuals. Designed for optimal comfort and support.",
+                    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New", "Soft"],
+                      "count": 54,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Casual Canvas Sneakers",
+                    "brand": "CasualComforts",
+                    "price": 150000,
+                    "discount": 5,
+                    "description": "Casual and lightweight canvas sneakers for everyday wear. Made with breathable and durable materials.",
+                    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "count": 54,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Sleek Slip-On Loafers",
+                    "brand": "ElegantEssentials",
+                    "price": 190000,
+                    "discount": 67,
+                    "description": "Sleek and sophisticated slip-on loafers for a polished and stylish look. Made with premium leather.",
+                    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New"],
+                      "count": 89,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Comfy Athletic Sandals",
+                    "brand": "ActiveSports",
+                    "price": 80000,
+                    "discount": 12,
+                    "description": "Comfortable and water-resistant athletic sandals for outdoor activities and beach days.",
+                    "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "count": 64,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Casual Slip-On Espadrilles",
+                    "brand": "CasualComforts",
+                    "price": 120000,
+                    "discount": 15,
+                    "description": "Casual and stylish slip-on espadrilles for a laid-back and beachy look. Made with natural fibers.",
+                    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Soft"],
+                      "count": 65,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Classic Oxford Shoes",
+                    "brand": "ElegantEssentials",
+                    "price": 240000,
+                    "discount": 0,
+                    "description": "Timeless classic oxford shoes for a formal and sophisticated look. Made with polished leather.",
+                    "image": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New"],
+                      "count": 34,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Urban High-Top Sneakers",
+                    "brand": "StreetStyle",
+                    "price": 280000,
+                    "discount": 5,
+                    "description": "Urban and edgy high-top sneakers for a street-style and modern vibe. Made with durable materials.",
+                    "image": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "count": 67,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Athletic Training Shoes",
+                    "brand": "ActiveSports",
+                    "price": 190000,
+                    "discount": 0,
+                    "description": "Athletic training shoes for intense workouts and sports activities. Designed for performance and stability.",
+                    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New"],
+                      "count": 50,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Comfy Walking Shoes",
+                    "brand": "CasualComforts",
+                    "price": 75000,
+                    "discount": 10,
+                    "description": "Comfortable and supportive walking sandals for leisurely strolls and sightseeing.",
+                    "image": "https://images.unsplash.com/photo-1605408499391-6368c628ef42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "count": 75,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Casual Slip-On Sneakers",
+                    "brand": "CasualComforts",
+                    "price": 160000,
+                    "discount": 10,
+                    "description": "Casual slip-on sneakers for easy and trendy wear. Made with breathable and flexible materials.",
+                    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "count": 90,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Sporty Trail Running Shoes",
+                    "brand": "ActiveSports",
+                    "price": 240000,
+                    "discount": 0,
+                    "description": "Sporty trail running shoes for adventurous and outdoor activities. Designed for stability and traction.",
+                    "image": "https://plus.unsplash.com/premium_photo-1682125177822-63c27a3830ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New", "Soft"],
+                      "count": 231,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Stylish Loafer Mules",
+                    "brand": "ElegantEssentials",
+                    "price": 180000,
+                    "discount": 5,
+                    "description": "Stylish and versatile loafer mules for a fashionable and modern look. Made with premium leather.",
+                    "image": "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Soft"],
+                      "count": 80,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Athletic Soccer Cleats",
+                    "brand": "ActiveSports",
+                    "price": 280000,
+                    "discount": 10,
+                    "description": "Athletic soccer cleats for optimal performance on the field. Designed for agility and speed.",
+                    "image": "https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New"],
+                      "count": 70,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Classic Penny Loafers",
+                    "brand": "ElegantEssentials",
+                    "price": 210000,
+                    "discount": 20,
+                    "description": "Classic penny loafers for a polished and sophisticated look. Made with smooth leather.",
+                    "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "count": 59,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Fashionable Chelsea Boots",
+                    "brand": "StreetStyle",
+                    "price": 260000,
+                    "discount": 15,
+                    "description": "Fashionable and edgy Chelsea boots for a trendy and versatile style. Made with leather and elastic side panels.",
+                    "image": "https://images.unsplash.com/photo-1612902377756-414b2139d5e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Soft"],
+                      "count": 69,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Casual Knit Sneakers",
+                    "brand": "CasualComforts",
+                    "price": 150000,
+                    "discount": 0,
+                    "description": "Casual knit sneakers for a modern and sporty look. Made with lightweight and breathable fabric.",
+                    "image": "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New"],
+                      "count": 56,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Comfy Slide Sandals",
+                    "brand": "CasualComforts",
+                    "price": 85000,
+                    "discount": 10,
+                    "description": "Comfortable and easy-to-wear slide sandals for casual and summer days.",
+                    "image": "https://images.unsplash.com/photo-1579338908476-3a3a1d71a706?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "count": 109,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Elegant Tassel Loafers",
+                    "brand": "ElegantEssentials",
+                    "price": 230000,
+                    "discount": 5,
+                    "description": "Elegant and refined tassel loafers for a formal and classic look. Made with polished leather.",
+                    "image": "https://images.unsplash.com/photo-1590673846749-e2fb8f655df8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "New", "Soft"],
+                      "count": 80,
+                      "category": "Shoes"
+                    }
+                  },
+                  {
+                    "name": "Urban High-Top Sneakers",
+                    "brand": "StreetStyle",
+                    "price": 290000,
+                    "discount": 10,
+                    "description": "Urban and edgy high-top sneakers for a street-style and modern vibe. Made with durable materials.",
+                    "image": "https://images.unsplash.com/photo-1542219550-37153d387c27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTh8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "count": 57,
+                      "category": "Shoes"
+                    }
+                  }
+            ],
+            "BAJU":[ 
+                  {
+                    "name": "Casual Polo Shirt",
+                    "brand": "CasualComforts",
+                    "price": 75000,
+                    "discount": 0,
+                    "description": "Casual and versatile polo shirt for a sporty and laid-back style. Made with breathable and stretchy fabric.",
+                    "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "count": 87,
+                      "category": "Shirts"
+                    }
+                  },
+                  {
+                    "name": "Elegant Lace Dress",
+                    "brand": "ElegantEssentials",
+                    "price": 280000,
+                    "discount": 10,
+                    "description": "Elegant and feminine lace dress for a romantic and special look. Made with delicate lace fabric.",
+                    "image": "https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "New"],
+                      "count": 90,
+                      "category": "Dresses"
+                    }
+                  },
+                  {
+                    "name": "Comfy Jogger Pants",
+                    "brand": "CasualComforts",
+                    "price": 85000,
+                    "discount": 0,
+                    "description": "Comfy and stylish jogger pants for a trendy and casual outfit. Made with soft and lightweight material.",
+                    "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amVhbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "Soft"],
+                      "count": 80,
+                      "category": "Pants"
+                    }
+                  },
+                  {
+                    "name": "Stylish Bomber Jacket",
+                    "brand": "FashionFusion",
+                    "price": 240000,
+                    "discount": 10,
+                    "description": "Stylish and edgy bomber jacket for a cool and urban look. Made with durable and lightweight fabric.",
+                    "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "Soft"],
+                      "count": 57,
+                      "category": "Jackets"
+                    }
+                  },
+                  {
+                    "name": "Casual V-Neck T-Shirt",
+                    "brand": "CasualComforts",
+                    "price": 70000,
+                    "discount": 0,
+                    "description": "Casual and basic V-neck t-shirt for a versatile and easy-to-wear style. Made with soft and breathable fabric.",
+                    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dCUyMHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "count": 89,
+                      "category": "T-Shirts"
+                    }
+                  },
+                  {
+                    "name": "Chic Wrap Dress",
+                    "brand": "FashionFusion",
+                    "price": 190000,
+                    "discount": 5,
+                    "description": "Chic and flattering wrap dress for a feminine and modern look. Made with comfortable and stretchy fabric.",
+                    "image": "https://images.unsplash.com/photo-1623609163841-5e69d8c62cc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing","New","New Colection","Expensive"],
+                      "count": 98,
+                      "category": "Dresses"
+                    }
+                  },
+                  {
+                    "name": "Classic Chinos Pants",
+                    "brand": "ElegantEssentials",
+                    "price": 140000,
+                    "discount": 10,
+                    "description": "Classic and timeless chinos pants for a smart and casual style. Made with comfortable and durable fabric.",
+                    "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFudHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "count": 90,
+                      "category": "Pants"
+                    }
+                  },
+                  {
+                    "name": "Elegant Pleated Blouse",
+                    "brand": "ElegantEssentials",
+                    "price": 160000,
+                    "discount": 0,
+                    "description": "Elegant and refined pleated blouse for a sophisticated and versatile look. Made with high-quality fabric.",
+                    "image": "https://images.unsplash.com/photo-1591911894784-84dbae55cd4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fEJsb3VzZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "Soft"],
+                      "count": 67,
+                      "category": "Blouses"
+                    }
+                  },
+                  {
+                    "name": "Comfy Knit Cardigan",
+                    "brand": "CasualComforts",
+                    "price": 98000,
+                    "discount": 0,
+                    "description": "Comfy and cozy knit cardigan for a warm and casual layering. Made with soft and knitted fabric.",
+                    "image": "https://images.unsplash.com/photo-1605022600390-071c6f969b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGphY2tldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "count": 431,
+                      "category": "Sweaters"
+                    }
+                  },
+                  {
+                    "name": "Chic A-Line Skirt",
+                    "brand": "FashionFusion",
+                    "price": 120000,
+                    "discount": 20,
+                    "description": "Chic and versatile A-line skirt for a modern and stylish look. Made with comfortable and stretchy fabric.",
+                    "image": "https://images.unsplash.com/photo-1549575810-b9b7abc51d9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2tpcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing","New Colection","Soft"],
+                      "count": 69,
+                      "category": "Skirts"
+                    }
+                  },
+                  {
+                    "name": "Casual Henley Shirt",
+                    "brand": "CasualComforts",
+                    "price": 75000,
+                    "discount": 0,
+                    "description": "Casual and laid-back Henley shirt for a relaxed and effortless style. Made with soft and breathable fabric.",
+                    "image": "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "count": 231,
+                      "category": "Shirts"
+                    }
+                  },
+                  {
+                    "name": "Elegant Evening Gown",
+                    "brand": "ElegantEssentials",
+                    "price": 450000,
+                    "discount": 15,
+                    "description": "Elegant and stunning evening gown for a glamorous and special occasion look. Made with luxurious fabric.",
+                    "image": "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "New"],
+                      "count": 120,
+                      "category": "Dresses"
+                    }
+                  },
+                  {
+                    "name": "Comfy Lounge Shorts",
+                    "brand": "CasualComforts",
+                    "price": 60000,
+                    "discount": 10,
+                    "description": "Comfy and relaxed lounge shorts for comfortable and casual wear. Made with soft and lightweight fabric.",
+                    "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "Soft", "Expensive"],
+                      "count": 453,
+                      "category": "Shirts"
+                    }
+                  },
+                  {
+                    "name": "Black Leather Jacket",
+                    "brand": "FashionFusion",
+                    "price": 280000,
+                    "discount": 0,
+                    "description": "Stylish and trendy suede jacket for a chic and fashionable look. Made with soft and luxurious suede.",
+                    "image": "https://example.com/images/stylish-suede-jacket.jpg",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "Soft", "New"],
+                      "count": 149,
+                      "category": "Jackets"
+                    }
+                  },
+                  {
+                    "name": "Casual Graphic T-Shirt",
+                    "brand": "CasualComforts",
+                    "price": 70000,
+                    "discount": 0,
+                    "description": "Casual and trendy graphic t-shirt for a fun and expressive style. Made with soft and breathable fabric.",
+                    "image": "https://images.unsplash.com/photo-1583744999783-efe9dc5eac91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "New", "Soft"],
+                      "count":149,
+                      "category": "T-Shirts"
+                    }
+                  },
+                  {
+                    "name": "Chic Wrap Top",
+                    "brand": "FashionFusion",
+                    "price": 95000,
+                    "discount": 5,
+                    "description": "Chic and stylish wrap top for a feminine and versatile look. Made with comfortable and draping fabric.",
+                    "image": "https://images.unsplash.com/photo-1525171254930-643fc658b64e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9wc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "Stylish", "Soft"],
+                      "count": 89,
+                      "category": "Tops"
+                    }
+                  },
+                  {
+                    "name": "Classic Wool Coat",
+                    "brand": "ElegantEssentials",
+                    "price": 320000,
+                    "discount": 10,
+                    "description": "Classic and timeless wool coat for a warm and sophisticated style. Made with high-quality wool.",
+                    "image": "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29hdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing", "New", "New Colection"],
+                      "count": 90,
+                      "category": "Coats"
+                    }
+                  },
+                  {
+                    "name": "Elegant Silk Dress",
+                    "brand": "ElegantEssentials",
+                    "price": 220000,
+                    "discount": 0,
+                    "description": "Elegant and luxurious silk dress for a refined and special occasion look. Made with premium silk.",
+                    "image": "https://images.unsplash.com/photo-1496217590455-aa63a8350eea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "Soft", "Expensive"],
+                      "count": 143,
+                      "category": "Dresses"
+                    }
+                  },
+                  {
+                    "name": "Comfy Hooded Sweatshirt",
+                    "brand": "CasualComforts",
+                    "price": 95000,
+                    "discount": 0,
+                    "description": "Comfy and warm hooded sweatshirt for a cozy and casual style. Made with soft and fleece-lined material.",
+                    "image": "https://images.unsplash.com/photo-1588271968087-4c51abe05afc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Mans Clothing", "Woman Clothing ", "New", "Soft"],
+                      "count": 210,
+                      "category": "Sweaters"
+                    }
+                  },
+                  {
+                    "name": "Chic High-Waisted Pants",
+                    "brand": "FashionFusion",
+                    "price": 130000,
+                    "discount": 0,
+                    "description": "Chic and trendy high-waisted pants for a modern and stylish look. Made with comfortable and stretchy fabric.",
+                    "image": "https://images.unsplash.com/photo-1627841898714-bfd02f07207d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fHBhbnRzJTIwc2hvcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "detail": {
+                      "titleSpan": ["Woman Clothing ", "Soft", "Stylish"],
+                      "count": 320,
+                      "category": "Pants"
+                    }
+                  }
+            ]
+        }    
     ]
 }
