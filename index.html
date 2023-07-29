@@ -20,8 +20,7 @@
 <body>
 
     <div id="app">
-
-        
+        <button @click="testApi('')">Click</button>
     </div>
 
 
@@ -39,62 +38,42 @@
             data() {
                 return {
                     dataApi: {
-                        url: "https://cuaca-gempa-rest-api.vercel.app/weather/",
+                        url: "",
                         data: [
 
                         ],
-                        place: null,
 
                     },
                 }
             },
+           
             methods: {
-
                 testApi(req) {
-                    const url = "data/data.json";
+                    const url = "data.json";
                     axios.get(url, {
-                        params : {
+                        params: {
 
                         }
                     }).then(response => {
-                        console.log(response);
-                    })
+                        this.dataApi.data = response;
+                        console.log(this.dataApi.data);
+                        if (req != "") {
+                            const filter = this.dataApi.data.filter((data) => {
+
+                            });
+                            alert("kamu mencoba menggunakan filter");
+                        }
+
+                    }).catch(error => console.log(error));
                 },
 
                 switchRule() {
                     this.toggle.rules = !this.toggle.rules;
                 },
-                getDataApi(kota, provinsi) {
-                    this.form.kota = "";
-                    this.form.provinsi = "";
-                    var url = this.dataApi.url;
-                    if (provinsi == "") {
-                        alert("Asuu bukannya diisi provinsinya");
-                    } else {
-                        if (kota == "") {
-                            url += provinsi
-                        } else if (kota != "") {
-                            url += provinsi + "/" + kota
-                        }
-
-                        axios.get(url, {
-                            params: {
-
-                            }
-                        }).then((response) => {
-                            if (kota != "") {
-                                console.log(response);
-                                this.dataApi.data = response.data.data.params[6].times;
-                                console.log(this.dataApi.data);
-                            }
-                        }).catch(error => console.log("error : " + error));
-                    }
-                    //    axios.get()
-                }
             },
-            mounted() {
-
-            }
+            mounted : function(){
+               this.testApi();
+            },
 
 
         })
