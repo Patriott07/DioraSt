@@ -6,11 +6,11 @@
                     "name": "Classic Leather Sneakers",
                     "brand": "CasualComforts",
                     "price": 180000,
-                    "discount": 10,
+                    "discount": 0,
                     "description": "Classic and versatile leather sneakers for a casual and trendy look. Made with high-quality leather material.",
                     "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "titleSpan": ["Shoes Man", "Comfortable","Expensive"],
                       "count": 41,
                       "category": "Shoes"
                     }
@@ -21,7 +21,7 @@
                     "price": 220000,
                     "discount": 10,
                     "description": "Sporty and performance-driven running shoes for active individuals. Designed for optimal comfort and support.",
-                    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+                    "image": "https://images.unsplash.com/photo-1584590069631-1c180f90a54c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHNwb3J0JTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
                       "titleSpan": ["Shoes Man", "New", "Soft"],
                       "count": 54,
@@ -32,7 +32,7 @@
                     "name": "Casual Canvas Sneakers",
                     "brand": "CasualComforts",
                     "price": 150000,
-                    "discount": 5,
+                    "discount": 0,
                     "description": "Casual and lightweight canvas sneakers for everyday wear. Made with breathable and durable materials.",
                     "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
@@ -44,12 +44,12 @@
                   {
                     "name": "Sleek Slip-On Loafers",
                     "brand": "ElegantEssentials",
-                    "price": 190000,
-                    "discount": 67,
+                    "price": 180000,
+                    "discount": 54,
                     "description": "Sleek and sophisticated slip-on loafers for a polished and stylish look. Made with premium leather.",
                     "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New"],
+                      "titleSpan": ["Shoes Man", "New", "New Colection"],
                       "count": 89,
                       "category": "Shoes"
                     }
@@ -62,7 +62,7 @@
                     "description": "Comfortable and water-resistant athletic sandals for outdoor activities and beach days.",
                     "image": "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Comfortable"],
+                      "titleSpan": ["Shoes Man", "Comfortable","Sandals"],
                       "count": 64,
                       "category": "Shoes"
                     }
@@ -75,7 +75,7 @@
                     "description": "Casual and stylish slip-on espadrilles for a laid-back and beachy look. Made with natural fibers.",
                     "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Soft"],
+                      "titleSpan": ["Shoes Man", "Soft", "New Colection"],
                       "count": 65,
                       "category": "Shoes"
                     }
@@ -88,7 +88,7 @@
                     "description": "Timeless classic oxford shoes for a formal and sophisticated look. Made with polished leather.",
                     "image": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New"],
+                      "titleSpan": ["Shoes Man", "New", "Formal"],
                       "count": 34,
                       "category": "Shoes"
                     }
@@ -114,7 +114,7 @@
                     "description": "Athletic training shoes for intense workouts and sports activities. Designed for performance and stability.",
                     "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New"],
+                      "titleSpan": ["Shoes Man", "New", "Expensive"],
                       "count": 50,
                       "category": "Shoes"
                     }
@@ -153,7 +153,7 @@
                     "description": "Sporty trail running shoes for adventurous and outdoor activities. Designed for stability and traction.",
                     "image": "https://plus.unsplash.com/premium_photo-1682125177822-63c27a3830ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New", "Soft"],
+                      "titleSpan": ["Shoes Man", "New", "Soft","Shoes Woman"],
                       "count": 231,
                       "category": "Shoes"
                     }
@@ -166,7 +166,7 @@
                     "description": "Stylish and versatile loafer mules for a fashionable and modern look. Made with premium leather.",
                     "image": "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Soft"],
+                      "titleSpan": ["Shoes Man", "Soft","Shoes Woman"],
                       "count": 80,
                       "category": "Shoes"
                     }
@@ -179,7 +179,7 @@
                     "description": "Athletic soccer cleats for optimal performance on the field. Designed for agility and speed.",
                     "image": "https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New"],
+                      "titleSpan": ["Shoes Man", "New","Shoes Woman"],
                       "count": 70,
                       "category": "Shoes"
                     }
@@ -205,7 +205,7 @@
                     "description": "Fashionable and edgy Chelsea boots for a trendy and versatile style. Made with leather and elastic side panels.",
                     "image": "https://images.unsplash.com/photo-1612902377756-414b2139d5e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Soft"],
+                      "titleSpan": ["Shoes Man", "Soft","Shoes Woman"],
                       "count": 69,
                       "category": "Shoes"
                     }
@@ -231,7 +231,7 @@
                     "description": "Comfortable and easy-to-wear slide sandals for casual and summer days.",
                     "image": "https://images.unsplash.com/photo-1579338908476-3a3a1d71a706?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "Comfortable", "Soft"],
+                      "titleSpan": ["Shoes Man", "Comfortable", "Soft","Shoes Woman"],
                       "count": 109,
                       "category": "Shoes"
                     }
@@ -244,7 +244,7 @@
                     "description": "Elegant and refined tassel loafers for a formal and classic look. Made with polished leather.",
                     "image": "https://images.unsplash.com/photo-1590673846749-e2fb8f655df8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Shoes Man", "New", "Soft"],
+                      "titleSpan": ["Shoes Man", "New", "Soft","Expensive"],
                       "count": 80,
                       "category": "Shoes"
                     }
@@ -272,7 +272,7 @@
                     "description": "Casual and versatile polo shirt for a sporty and laid-back style. Made with breathable and stretchy fabric.",
                     "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "titleSpan": ["Mans Clothing", "New", "Soft","Shirts"],
                       "count": 87,
                       "category": "Shirts"
                     }
@@ -285,7 +285,7 @@
                     "description": "Elegant and feminine lace dress for a romantic and special look. Made with delicate lace fabric.",
                     "image": "https://images.unsplash.com/flagged/photo-1585052201332-b8c0ce30972f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJlc3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "New"],
+                      "titleSpan": ["Woman Clothing", "New","Dresses"],
                       "count": 90,
                       "category": "Dresses"
                     }
@@ -298,7 +298,7 @@
                     "description": "Comfy and stylish jogger pants for a trendy and casual outfit. Made with soft and lightweight material.",
                     "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amVhbnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "Soft"],
+                      "titleSpan": ["Mans Clothing", "Soft","Pants"],
                       "count": 80,
                       "category": "Pants"
                     }
@@ -311,7 +311,7 @@
                     "description": "Stylish and edgy bomber jacket for a cool and urban look. Made with durable and lightweight fabric.",
                     "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "Soft"],
+                      "titleSpan": ["Mans Clothing", "Soft","Jackets"],
                       "count": 57,
                       "category": "Jackets"
                     }
@@ -324,7 +324,7 @@
                     "description": "Casual and basic V-neck t-shirt for a versatile and easy-to-wear style. Made with soft and breathable fabric.",
                     "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dCUyMHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "titleSpan": ["Mans Clothing", "New", "Soft","Shirts"],
                       "count": 89,
                       "category": "T-Shirts"
                     }
@@ -337,7 +337,7 @@
                     "description": "Chic and flattering wrap dress for a feminine and modern look. Made with comfortable and stretchy fabric.",
                     "image": "https://images.unsplash.com/photo-1623609163841-5e69d8c62cc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing","New","New Colection","Expensive"],
+                      "titleSpan": ["Woman Clothing","New","New Colection","Expensive","Dresses"],
                       "count": 98,
                       "category": "Dresses"
                     }
@@ -350,7 +350,7 @@
                     "description": "Classic and timeless chinos pants for a smart and casual style. Made with comfortable and durable fabric.",
                     "image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFudHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "titleSpan": ["Pants","Mans Clothing", "New", "Soft"],
                       "count": 90,
                       "category": "Pants"
                     }
@@ -363,7 +363,7 @@
                     "description": "Elegant and refined pleated blouse for a sophisticated and versatile look. Made with high-quality fabric.",
                     "image": "https://images.unsplash.com/photo-1591911894784-84dbae55cd4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fEJsb3VzZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "Soft"],
+                      "titleSpan": ["Blouses","Woman Clothing", "Soft"],
                       "count": 67,
                       "category": "Blouses"
                     }
@@ -376,7 +376,7 @@
                     "description": "Comfy and cozy knit cardigan for a warm and casual layering. Made with soft and knitted fabric.",
                     "image": "https://images.unsplash.com/photo-1605022600390-071c6f969b32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGphY2tldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "titleSpan": ["Sweaters","Mans Clothing", "New", "Soft"],
                       "count": 431,
                       "category": "Sweaters"
                     }
@@ -389,7 +389,7 @@
                     "description": "Chic and versatile A-line skirt for a modern and stylish look. Made with comfortable and stretchy fabric.",
                     "image": "https://images.unsplash.com/photo-1549575810-b9b7abc51d9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2tpcnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing","New Colection","Soft"],
+                      "titleSpan": ["Skirts","Woman Clothing","New Colection","Soft"],
                       "count": 69,
                       "category": "Skirts"
                     }
@@ -402,7 +402,7 @@
                     "description": "Casual and laid-back Henley shirt for a relaxed and effortless style. Made with soft and breathable fabric.",
                     "image": "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New", "Soft"],
+                      "titleSpan": ["Shirts","Mans Clothing", "New", "Soft"],
                       "count": 231,
                       "category": "Shirts"
                     }
@@ -415,7 +415,7 @@
                     "description": "Elegant and stunning evening gown for a glamorous and special occasion look. Made with luxurious fabric.",
                     "image": "https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "New"],
+                      "titleSpan": ["Dresses","Mans Clothing", "New"],
                       "count": 120,
                       "category": "Dresses"
                     }
@@ -428,7 +428,7 @@
                     "description": "Comfy and relaxed lounge shorts for comfortable and casual wear. Made with soft and lightweight fabric.",
                     "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "Soft", "Expensive"],
+                      "titleSpan": ["Shirts","Mans Clothing", "Soft", "Expensive"],
                       "count": 453,
                       "category": "Shirts"
                     }
@@ -439,9 +439,9 @@
                     "price": 280000,
                     "discount": 0,
                     "description": "Stylish and trendy suede jacket for a chic and fashionable look. Made with soft and luxurious suede.",
-                    "image": "https://example.com/images/stylish-suede-jacket.jpg",
+                    "image": "https://images.unsplash.com/photo-1518279637930-44d3a2ff76d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBqYWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "Soft", "New"],
+                      "titleSpan": ["Jackets","Woman Clothing", "Soft", "New"],
                       "count": 149,
                       "category": "Jackets"
                     }
@@ -454,7 +454,7 @@
                     "description": "Casual and trendy graphic t-shirt for a fun and expressive style. Made with soft and breathable fabric.",
                     "image": "https://images.unsplash.com/photo-1583744999783-efe9dc5eac91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "New", "Soft"],
+                      "titleSpan": ["Shirts","Woman Clothing", "New", "Soft"],
                       "count":149,
                       "category": "T-Shirts"
                     }
@@ -467,7 +467,7 @@
                     "description": "Chic and stylish wrap top for a feminine and versatile look. Made with comfortable and draping fabric.",
                     "image": "https://images.unsplash.com/photo-1525171254930-643fc658b64e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG9wc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "Stylish", "Soft"],
+                      "titleSpan": ["Tops","Woman Clothing", "Stylish", "Soft"],
                       "count": 89,
                       "category": "Tops"
                     }
@@ -480,7 +480,7 @@
                     "description": "Classic and timeless wool coat for a warm and sophisticated style. Made with high-quality wool.",
                     "image": "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29hdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing", "New", "New Colection"],
+                      "titleSpan": ["Coats","Woman Clothing", "New", "New Colection"],
                       "count": 90,
                       "category": "Coats"
                     }
@@ -493,7 +493,7 @@
                     "description": "Elegant and luxurious silk dress for a refined and special occasion look. Made with premium silk.",
                     "image": "https://images.unsplash.com/photo-1496217590455-aa63a8350eea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGRyZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=700&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "Soft", "Expensive"],
+                      "titleSpan": ["Dresses","Woman Clothing", "Soft", "Expensive"],
                       "count": 143,
                       "category": "Dresses"
                     }
@@ -506,7 +506,7 @@
                     "description": "Comfy and warm hooded sweatshirt for a cozy and casual style. Made with soft and fleece-lined material.",
                     "image": "https://images.unsplash.com/photo-1588271968087-4c51abe05afc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzR8fHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Mans Clothing", "Woman Clothing ", "New", "Soft"],
+                      "titleSpan": ["Sweaters","Mans Clothing", "Woman Clothing ", "New", "Soft"],
                       "count": 210,
                       "category": "Sweaters"
                     }
@@ -519,7 +519,7 @@
                     "description": "Chic and trendy high-waisted pants for a modern and stylish look. Made with comfortable and stretchy fabric.",
                     "image": "https://images.unsplash.com/photo-1627841898714-bfd02f07207d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fHBhbnRzJTIwc2hvcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
-                      "titleSpan": ["Woman Clothing ", "Soft", "Stylish"],
+                      "titleSpan": ["Pants","Woman Clothing ", "Soft", "Stylish"],
                       "count": 320,
                       "category": "Pants"
                     }
