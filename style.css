@@ -1,0 +1,344 @@
+/* loads */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.txt-md {
+    font-size: 32px;
+}
+
+.txt-sm {
+    font-size: 20px;
+}
+
+.txt-xm {
+    font-size: 16px;
+    color: #A39999;
+}
+
+#app {
+    background-color: #E9E4E4;
+    font-family: 'Baumans', cursive;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.header2 {
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80) !important;
+}
+
+header {
+    background-size: cover;
+    transition: all 0.4s;
+    background-image: url(asset/hero-1.png);
+    height: 90vh;
+    width: 100%;
+    /* margin: 0px auto; */
+    background-repeat: no-repeat;
+
+
+    /* background-position-y: -50px; */
+
+}
+
+header nav span.nav-span,
+.info .nav-span {
+    height: 39px !important;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    transition: all 0.8s;
+}
+
+.nav-span a {
+    text-decoration: none;
+    color: black;
+    padding: 0px 7px;
+    transition: all 0.6s;
+}
+
+.nav-span a:hover {
+    color: #FF9900;
+}
+
+path.love:hover {
+    fill: #FF2323;
+}
+
+span.white {
+    transition: all 0.6s;
+}
+
+span.white:hover {
+    color: #33da97 !important;
+}
+
+path.cart:hover {
+    fill: #FF9900;
+}
+
+/* ===== Fonts ===== */
+
+@font-face {
+    font-family: "MTTMilano-Regular";
+    src: url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.eot");
+    src: url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/68d7ff963a65763581b048ca3cc3d178.svg#MTTMilano-Medium") format("svg");
+}
+
+/* ====== Ticker-Tape ====== */
+
+.ticker-tape-section {
+    overflow: hidden;
+
+
+    .ticker-tape-section__container {
+        display: flex;
+        /* position: absolute;
+		left: 0;
+		right: 0;
+        bottom: 0; */
+    }
+
+    .ticker-tape__text-block {
+        display: flex;
+        justify-content: flex-start;
+        animation: autoSliderOne 40s linear infinite;
+        animation-delay: -40s;
+        animation-play-state: running;
+        animation-direction: normal;
+
+        &:nth-child(2) {
+            animation: autoSliderTwo 40s linear infinite;
+            animation-delay: -20s;
+        }
+    }
+
+    .ticker-tape--text {
+        flex: 1;
+        margin-right: 20px;
+        font-family: "MTTMilano-Regular";
+        font-size: 21px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #a355ff;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+}
+
+@keyframes autoSliderOne {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes autoSliderTwo {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.card span.badge,
+.modal-dialog span.badge {
+    background: #A67CFF;
+    margin: 3px 5px 3px 0px;
+}
+
+.card span.check {
+    border-radius: 5px;
+    background: #0EFD09;
+    color: white;
+    padding: 3px 12px;
+}
+
+.dash {
+    text-decoration: line-through;
+    cursor: help;
+}
+
+.e {
+    cursor: pointer;
+}
+
+li:hover,
+.harga:hover {
+    color: #33da97;
+    margin-left: 20px;
+
+}
+
+li:target {
+    color: #33da97;
+}
+
+li,
+.harga,
+.check,
+.cart-footer {
+    transition: all 0.4s;
+}
+
+#judulTab {
+    color: #33da97;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.show {
+    display: block !important;
+}
+
+ul,
+h6.e,
+h5 {
+    transition: all 0.6s;
+}
+
+h6.e:hover,
+h5:hover,
+footer a:hover {
+    margin-left: 10px;
+    transform: skewX(15deg);
+    color: #33da97;
+}
+
+.check:hover {
+    background: rgba(14, 253, 9, 0.70);
+    box-shadow: 2px 4px 10px 0px rgba(81, 241, 241, 0.60);
+    margin-right: 10px;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.badge {
+    cursor: help;
+}
+
+@keyframes leftSlide {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+.trans {
+    transition: all 0.2s;
+    animation: leftSlide 0.2s linear;
+}
+
+.info {
+    z-index: 99;
+    transition: all 0.6s;
+    animation: fade 0.6s linear;
+}
+
+.box-info {
+    z-index: 999;
+    font-size: 14px !important;
+    width: 38vw;
+    border-radius: 15px 0px 15px 15px;
+    background: #ffffff;
+    color: #000 !important;
+    box-shadow: 4px 8px 6px 0px rgba(255, 153, 0, 0.50);
+}
+
+.info .nav-span {
+    margin-bottom: 60px;
+}
+
+.info .txt-xm {
+    color: #A39999 !important;
+}
+
+.box-info .txt-xm {
+    color: #000 !important;
+}
+
+.mark {
+    background-color: #000;
+    color: #33da97;
+    padding: 3px 5px;
+}
+
+.txt-end {
+    text-align: end !important;
+}
+
+.cart-footer:hover {
+    fill: #33da97 !important;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0px 7px;
+    transition: all 0.6s;
+}
+
+@keyframes underAn {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: max-content;
+    }
+}
+
+.foo-cop {
+    transition: all 1s;
+    position: relative;
+}
+
+.foo-cop:hover::after {
+    z-index: 99;
+    content: "";
+    width: 0;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    background-color: #33da97;
+    bottom: 0;
+    animation: underAn 1s linear;
+}
+
+.img-fluid-self {
+    width: 100%;
+    height: auto;
+}
+
+.modal-footer button {
+    color: #fff;
+    border-radius: 5px;
+    background: #050505;
+}
