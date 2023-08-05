@@ -47,29 +47,37 @@ if (isset($_POST["cek"])) {
     }
 }
 
-        
-    if (isset($_POST['login'])) {
-        $gmail = $_POST['gmail2'];
-        $pw = $_POST['password2'];
-        $real_pw = md5($pw);
 
-        $sql1 = "select * from user where gmail = '$gmail'";
-        $q1 = mysqli_query($koneksi, $sql1);
+if (isset($_POST['login'])) {
+    $gmail = $_POST['gmail2'];
+    $pw = $_POST['password2'];
+    $real_pw = md5($pw);
 
-        if (mysqli_num_rows($q1) > 0) {
+    $sql1 = "select * from user where gmail = '$gmail'";
+    $q1 = mysqli_query($koneksi, $sql1);
+    $r1 = mysqli_fetch_assoc($q1);
+
+    if (mysqli_num_rows($q1) > 0) {
+        if($r1['active'] == "Ban"){
+            $error .= "Maaf Akun Anda Telah di Banned Oleh Admin";
+        }else{
             $sql1 = "select * from user where gmail = '$gmail' AND password = '$real_pw'";
             $q1 = mysqli_query($koneksi, $sql1);
+            $r1 = mysqli_fetch_array($q1);
+            // var_dump($r1);
             if (mysqli_num_rows($q1) > 0) {
+                $_SESSION['id'] = $r1["id"];
+                // var_dump($_SESSION['id']);
                 header("Location: index.php");
                 exit();
             } else {
                 $error .= "<li>Password Salah, Periksa kembali password anda</li>";
-                
             }
-        } else {
-            $error .= "<li>Akun dengan gmail $gmail belum terdaftar</li>";
         }
+    } else {
+        $error .= "<li>Akun dengan gmail $gmail belum terdaftar</li>";
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +118,7 @@ if (isset($_POST["cek"])) {
         }
 
         .login {
-
+            z-index: 33;
             width: 401px;
             height: 100vh;
             border-radius: 5px;
@@ -160,22 +168,13 @@ if (isset($_POST["cek"])) {
         ul {
             padding: 8px 8px;
         }
-      
 
-        img {
-            transition: 3s;
-           
-        }
-
-        img:hover {
-            transform: scale(1.5) rotateX(360deg) rotateY(720deg);
-        } 
     </style>
 </head>
 
 <body>
 
-    <header class="container-fluid" id="app" @mouseover="playAudio">
+    <header class="container-fluid" id="app">
         <div class="row">
             <div v-if="toggle.form" class="col-4 login">
                 <div class="container pt-5 pb-3 text-center">
@@ -326,14 +325,16 @@ if (isset($_POST["cek"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
+   
     <script>
         const app = Vue.createApp({
             data() {
                 return {
                     toggle: {
                         pwInspect: false,
-                        form: false,
+                        form: true,
                     },
                     dataInput: {
                         password: "",
