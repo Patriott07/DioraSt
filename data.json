@@ -11,7 +11,7 @@
                     "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
                     "detail": {
                       "titleSpan": ["Shoes Man", "Comfortable","Expensive"],
-                      "count": 41,
+                      "count": 0,
                       "category": "Shoes"
                     }
                   },
@@ -115,7 +115,7 @@
                     "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
                       "titleSpan": ["Shoes Man", "New", "Expensive"],
-                      "count": 50,
+                      "count": 0,
                       "category": "Shoes"
                     }
                   },
@@ -141,7 +141,7 @@
                     "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
                       "titleSpan": ["Shoes Man", "Comfortable"],
-                      "count": 90,
+                      "count": 0,
                       "category": "Shoes"
                     }
                   },
@@ -180,7 +180,7 @@
                     "image": "https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
                     "detail": {
                       "titleSpan": ["Shoes Man", "New","Shoes Woman"],
-                      "count": 70,
+                      "count": 0,
                       "category": "Shoes"
                     }
                   },

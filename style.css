@@ -3,7 +3,8 @@
     padding: 0;
     margin: 0;
 }
-#content{
+
+#content {
     font-family: 'Baumans', cursive;
 }
 
@@ -29,6 +30,7 @@
     display: none;
 }
 
+
 .header2 {
     background-size: cover;
     background-image: url(https://images.unsplash.com/photo-1456894332557-b03dc5cf60d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80) !important;
@@ -42,6 +44,7 @@ header {
     width: 100%;
     /* margin: 0px auto; */
     background-repeat: no-repeat;
+    background-position: center;
 
 
     /* background-position-y: -50px; */
@@ -158,9 +161,11 @@ path.cart:hover {
 }
 
 .card span.badge,
-.modal-dialog span.badge, span.badge {
+.modal-dialog span.badge,
+span.badge {
     background: #A67CFF;
     margin: 3px 5px 3px 0px;
+    
 }
 
 .card span.check {
@@ -168,6 +173,7 @@ path.cart:hover {
     background: #0EFD09;
     color: white;
     padding: 3px 12px;
+  
 }
 
 .dash {
@@ -215,6 +221,7 @@ li,
     display: block !important;
 }
 
+
 ul,
 h6.e,
 h5 {
@@ -223,8 +230,7 @@ h5 {
 
 h6.e:hover,
 h5:hover,
-footer a:hover
- {
+footer a:hover {
     margin-left: 10px;
     transform: skewX(15deg);
     color: #33da97;
@@ -345,26 +351,62 @@ footer a {
     color: #fff;
     border-radius: 5px;
     background: #050505;
-}.img-produk{
-   width: 300px;
-   height: 200px;
-   object-fit: cover;
-   border-radius: 5px;
-}@media print{
-    hr{
+}
+
+.img-produk {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media print {
+    hr {
         display: block;
     }
-    span.badge{
+
+    span.badge {
         background: #A67CFF;
         margin: 3px 5px 3px 0px;
     }
-}.suc{
+}
+
+.suc {
     background: rgba(0, 255, 255, 0.66);
     padding: 8px 12px;
     color: #fff;
     font-size: 14px;
-}.info-error {
+}
+
+.info-error {
     background: #FF4C4C;
     font-size: 14px;
     color: white;
+}
+
+.btn-cart {
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 6px;
+    border-radius: 5px;
+    background: #F90;
+    transition: all 0.4s;
+}
+
+.btn-cart:hover {
+    color: #F90;
+    padding: 4px 10px !important;
+    background-color: #fff;
+}
+
+
+.img-prod-trans {
+    width: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px !important;
+}
+path.close:hover{
+    fill: #FF2323!important;
 }

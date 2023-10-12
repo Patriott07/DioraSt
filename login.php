@@ -2,12 +2,15 @@
 $error = "";
 $succes = "";
 $kondisi = "";
+$remember = "";
+$gmail = "";
+$pw = "";
 session_start();
 include "inc/inc_konek.php";
 ob_start();
 
 
-if (isset($_POST["cek"])) {
+if (isset($_POST["cek"])) { //create new account
     $rand = rand(1, 9999);
     $gmail = $_POST['gmail'];
     $pw    = $_POST['password'];
@@ -20,7 +23,7 @@ if (isset($_POST["cek"])) {
     if (mysqli_num_rows($q1) > 0) {
         $error .= "<li>Email yang anda gunakan sudah terdaftar. mohon gunakan gmail lain</li>";
     } else {
-        if (strlen($pw) < 9) {
+        if(strlen($pw) < 9) {
             $error .= "<li>Mohon masukan Minimal Karakter Password 8 digit</li>";
         } else {
             if (preg_match('/[A-Z]/', $pw)) {
@@ -51,6 +54,9 @@ if (isset($_POST["cek"])) {
 if (isset($_POST['login'])) {
     $gmail = $_POST['gmail2'];
     $pw = $_POST['password2'];
+    if(isset($_POST['remember'])){
+        $remember = $_POST['remember'];
+    }
     $real_pw = md5($pw);
 
     $sql1 = "select * from user where gmail = '$gmail'";
@@ -58,14 +64,25 @@ if (isset($_POST['login'])) {
     $r1 = mysqli_fetch_assoc($q1);
 
     if (mysqli_num_rows($q1) > 0) {
-        if($r1['active'] == "Ban"){
+        if ($r1['active'] == "Ban") {
             $error .= "Maaf Akun Anda Telah di Banned Oleh Admin";
-        }else{
+        } else {
             $sql1 = "select * from user where gmail = '$gmail' AND password = '$real_pw'";
             $q1 = mysqli_query($koneksi, $sql1);
             $r1 = mysqli_fetch_array($q1);
             // var_dump($r1);
             if (mysqli_num_rows($q1) > 0) {
+
+                //Cokkie
+                if($remember != ""){
+                    setcookie("gmail",$gmail, time() + 30 * 24 * 60 * 60);
+                    setcookie("pw",$pw, time() + 30 * 24 * 60 * 60);
+                    setcookie("Name", $r1['username'] , time() + 30 * 24*60*60);
+                    // jika ingin menampilkan gunakan $_COOKIE['gmail'];
+                    echo $_COOKIE['gmail'];
+                    echo $_COOKIE['pw'];
+                }
+            
                 $_SESSION['id'] = $r1["id"];
                 // var_dump($_SESSION['id']);
                 header("Location: index.php");
@@ -119,7 +136,6 @@ if (isset($_POST['login'])) {
 
         .login {
             z-index: 33;
-            width: 401px;
             height: 100vh;
             border-radius: 5px;
             background: #FFF;
@@ -169,6 +185,29 @@ if (isset($_POST['login'])) {
             padding: 8px 8px;
         }
 
+        img:hover {
+            transform: scale(2.5);
+            transition: all 15s !important;
+            cursor: zoom-in;
+        }
+
+        img {
+            transition: all 1.5s;
+        }
+
+        @media screen and (max-width: 520px) {
+            .login {
+            z-index: 33;
+            width: 100%;
+            height: 100vh;
+            border-radius: 5px;
+            background: #FFF;
+        }
+
+        .right-side{
+            display: none;
+        }
+       }
     </style>
 </head>
 
@@ -176,7 +215,8 @@ if (isset($_POST['login'])) {
 
     <header class="container-fluid" id="app">
         <div class="row">
-            <div v-if="toggle.form" class="col-4 login">
+            <!-- login -->
+            <div v-if="toggle.form" class="col-lg-4 col-12 col-md-8 offset-md-2 login">
                 <div class="container pt-5 pb-3 text-center">
                     <h6 style="font-size: 48px;">Diora</h6>
                     <div class="txt-sm">Login</div>
@@ -185,14 +225,14 @@ if (isset($_POST['login'])) {
                     <form action="" method="post">
                         <div class="my-3 text-start">
                             <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input v-model="dataInput.gmail" name="gmail2" type="email" class="form-control" id="gmail" placeholder="" required>
+                            <input  name="gmail2" type="email" class="form-control" id="gmail" value="<?php if(isset($_COOKIE['gmail'])){ echo $_COOKIE['gmail']; }?>"  required>
                             <div class="form-text">Write down your email</div>
                         </div>
                         <div class="mb-3 text-start">
                             <label for="exampleFormControlInput1" class="form-label">Password</label>
                             <div class="row">
                                 <div class="col-10">
-                                    <input v-model="dataInput.password" name="password2" type="password" class="form-control" id="password" placeholder="" required>
+                                    <input  name="password2" type="password" class="form-control" id="password" value="<?php if(isset($_COOKIE['pw'])){ echo $_COOKIE['pw']; }?>" placeholder="" required>
                                     <div class="form-text">Make sure no one see the password</div>
                                 </div>
                                 <div class="col-2 p-0 e" @click="switchPw">
@@ -207,6 +247,10 @@ if (isset($_POST['login'])) {
                                             <path d="M23.205 11.745C22.3229 9.46324 20.7915 7.48996 18.8001 6.06906C16.8088 4.64817 14.4447 3.84193 12 3.75C9.55544 3.84193 7.19134 4.64817 5.19995 6.06906C3.20856 7.48996 1.67717 9.46324 0.795047 11.745C0.735473 11.9098 0.735473 12.0902 0.795047 12.255C1.67717 14.5368 3.20856 16.51 5.19995 17.9309C7.19134 19.3518 9.55544 20.1581 12 20.25C14.4447 20.1581 16.8088 19.3518 18.8001 17.9309C20.7915 16.51 22.3229 14.5368 23.205 12.255C23.2646 12.0902 23.2646 11.9098 23.205 11.745ZM12 16.875C11.0359 16.875 10.0933 16.5891 9.29164 16.0534C8.48995 15.5177 7.86511 14.7564 7.49614 13.8656C7.12716 12.9748 7.03062 11.9946 7.21872 11.0489C7.40682 10.1033 7.87112 9.23464 8.5529 8.55285C9.23468 7.87107 10.1033 7.40677 11.049 7.21867C11.9946 7.03057 12.9748 7.12711 13.8656 7.49609C14.7564 7.86506 15.5178 8.48991 16.0535 9.2916C16.5891 10.0933 16.875 11.0358 16.875 12C16.8731 13.2923 16.3588 14.5311 15.445 15.445C14.5312 16.3588 13.2924 16.873 12 16.875Z" fill="black" />
                                         </svg>
                                     </div>
+                                </div>
+                                <div class="my-3 ms-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" <?php if(isset($_COOKIE['gmail']) && isset($_COOKIE['pw'])) { ?> checked <?php }?>>
+                                    <label class="form-check-label" for="exampleCheck1">Keep me login next time</label>
                                 </div>
                             </div>
                             <div class="text-end">
@@ -249,7 +293,8 @@ if (isset($_POST['login'])) {
                     </form>
                 </div>
             </div>
-            <div v-else class="col-4 login" name="register">
+            <!-- register -->
+            <div v-else class="col-lg-4 col-12 col-md-8 offset-md-2 login" name="register">
                 <div class="container pt-5 pb-3 text-center">
                     <h6 style="font-size: 48px;">Diora</h6>
                     <div class="txt-sm">Register</div>
@@ -312,7 +357,7 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
 
-            <div class="col-8 position-relative">
+            <div class="col-8 col-lg-8 col-md-6 position-relative right-side">
                 <div class="position-absolute translate-middle top-50 start-50">
                     <img style="width: 400px;" src="https://i.pinimg.com/originals/e4/e0/76/e4e076c273b1234de3cd3337a07640a0.gif" alt="">
                 </div>
@@ -327,7 +372,7 @@ if (isset($_POST['login'])) {
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-   
+
     <script>
         const app = Vue.createApp({
             data() {
@@ -344,21 +389,7 @@ if (isset($_POST['login'])) {
 
             },
             methods: {
-                // postData() {
-                //     if (this.dataInput.password.length < 9) {
-                //         alert("Karakter Password MInimal 9 code");
-                //     } else {
-                //         // alert("bisa masuk ke kondisi axios");
-                //         const url = "db/postUser.php";
-                //         console.log(this.dataInput);
-                //         axios.post(url, this.dataInput)
-                //             .then(response => {
-                //                 this.dataInput.gmail = "";
-                //                 this.dataInput.password = "";
-                //             })
-                //             .catch(error => console.log(error));
-                //     }
-                // },
+
                 switchPw() {
                     this.toggle.pwInspect = !this.toggle.pwInspect;
                     if (this.toggle.pwInspect) {
