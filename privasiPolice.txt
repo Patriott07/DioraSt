@@ -1,0 +1,9 @@
+Ketentuan Admin
+Bisa membuat data,
+ketentuan update 
+user : active,
+transaksi : date, via, penerima,alamat, img,name_produk,price,des,diskon,titleSpan
+produk : nama_produk, titleSpan, count, image, price, diskon
+fav : nama_produk, des, image, harga, tanggal,
+cart : nama_produk, des, image, harga, tanggal
+admin : username, password, verifikasi_kode, active

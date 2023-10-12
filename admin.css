@@ -1,0 +1,113 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#app {}
+
+.left-bar {
+    border-right: 1px solid #7c32f2;
+    color: #ECECF1;
+    background: rgba(32, 33, 35, 100);
+}
+
+.right-bar {
+    color: #ECECF1;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baumans', cursive;
+}
+
+.txt-xm {
+    font-size: 16px;
+}
+
+.txt-sm {
+    font-size: 20px;
+
+}
+
+.e {
+    cursor: pointer;
+}
+
+table tbody {
+    font-size: 14px !important;
+}
+
+.btn-self {
+    border: 0px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.20);
+    color: #D0D0D0;
+    transition: all 0.6s;
+}
+
+.btn-self:hover {
+    box-shadow: 3px 6px 6px 0px rgba(64, 177, 137, 0.35);
+}
+
+hr {
+    color: #D0D0D0;
+}
+
+h5:hover {
+    transform: skewX(15deg);
+    background: linear-gradient(180deg, #3D9D9D 30%, rgba(255, 255, 255, 0.90) 83.34%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.selected {
+    color: #33da97 !important;
+    background-color: yellow;
+}
+
+li:hover {
+    transform: translateX(15px);
+    color: #33da97 !important;
+}
+
+.fast,
+li,
+h5 {
+    transition: all 0.2s;
+}
+
+
+
+.kondisi {
+    background: rgba(179, 180, 187, 0.25);
+}
+
+.paginational {
+    margin: 5px 3px;
+    padding: 10px 20px;
+    color: #565656;
+    background: #D9D9D9;
+}
+
+.paginational:hover {
+    opacity: 0.8;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+.e{
+    cursor: pointer;
+   
+}
+
