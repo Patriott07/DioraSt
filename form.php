@@ -1,7 +1,34 @@
 <?php
+session_start();
 
 include "inc/inc_konek.php";
 include "inc/inc_fungsi.php";
+
+if(isset($_POST['back'])){
+    if(isset($_SESSION['transaksi'])){
+        unset($_SESSION['transaksi']);
+    }
+    setHeader('index.php');
+}
+
+
+
+if (isset($_SESSION['id']) && isset($_SESSION['transaksi'])) {
+    $id = $_SESSION['id'];
+
+    $id_produk = str_replace(' ', '+', urldecode($_GET['i']));
+    $id_produk = ssl_decrypt($id_produk);
+
+    $totalqty = explode(',',$id_produk);
+  
+
+    $total =  str_replace(' ', '+', urldecode($_GET['p']));
+    $total = ssl_decrypt($total, 'int');
+
+}else{
+    header("Location:index.php");
+}
+
 ?>
 
 
@@ -35,8 +62,8 @@ include "inc/inc_fungsi.php";
                             </svg>
                         </span>
 
-                        <span class="nav-span p-3 ms-3">
-                            <span class="white pe-1">Form Checkout</span>
+                        <span class="nav-span form p-3 ms-2">
+                            <span class="black pe-1">Form Checkout</span>
                         </span>
                         <div class="mt-5 information-header">
                             <div class="txt-xm text-light ps-3 fw-bold" style="letter-spacing: 1px">Information User</div>
@@ -47,18 +74,20 @@ include "inc/inc_fungsi.php";
                         <form action="" method="POST" class="mt-4">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Penerima :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Who will take the package?">
+                                <input type="text" class="form-control" id="form_penerima" placeholder="Who will take the package?" value="<?php if(isset($_COOKIE['Name'])){echo $_COOKIE['Name'];}?>" required>
                                 <div class="form-text text-light">give me your detail name, we will protect your privasi</div>
                             </div>
 
                             <label for="exampleFormControlInput1" class="form-label">Number Whatsapp :</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1">+62</span>
-                                <input type="number" class="form-control" placeholder="Example : 6289109876" aria-label="Username" aria-describedby="basic-addon1">
+                                <input v-model="nowa" type="number" id="formnumberwa" class="form-control" placeholder="Example : 6289109876" aria-label="Username" aria-describedby="basic-addon1" required>
                             </div>
                             <div class="form-text text-light mb-3">Sometimes, when you package got problem. we will contact you</div>
 
-                            <select class="form-select" aria-label="Default select example">
+                           
+
+                            <select class="form-select" id="form_via" aria-label="Default select example" value="<?php if(isset($_COOKIE['payment'])){echo $_COOKIE['payment'];}?>" required>
                                 <option selected>Select Payment Method</option>
                                 <option value="E-Banking">E-Banking</option>
                                 <option value="Paypal">Paypal</option>
@@ -76,7 +105,7 @@ include "inc/inc_fungsi.php";
 
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Example : Jln. Perjuangan No.13 Blok A Rw 3, Kec.Kedawung Kab.CIrebon"></textarea>
+                                <textarea class="form-control" id="form_alamat" rows="3" placeholder="Example : Jln. Perjuangan No.13 Blok A Rw 3, Kec.Kedawung Kab.CIrebon" value="<?php if(isset($_COOKIE['address'])){echo $_COOKIE['address'];}?>" required></textarea>
                                 <div class="form-text text-light">give me your detail addres for continue</div>
                             </div>
 
@@ -84,22 +113,22 @@ include "inc/inc_fungsi.php";
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="exampleFormControlInput1" class="form-label">Portal Code</label>
-                                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="example : 12455">
+                                        <input v-model="portalcode" type="number" class="form-control" id="formportalcode" placeholder="example : 12455" required>
                                         <div class="form-text text-light">give me your City portal code</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <input @click="setCookieForm($event)" class="form-check-input" type="checkbox"  value="1" id="isSave" >
                                 <label class="form-check-label text-light" for="flexCheckDefault">
                                     Save form when checkout again.
                                 </label>
                             </div>
 
-                            <div class="mb-3 text-end">
+                            <div class="mb-3 mt-3 text-end">
                                 <button type="reset" class="btn btn-dark">Reset</button>
-                                <button type="button" class="send-succes" @click.prevent="postTransaksi()">Start Transaction {{account.username}}</button>
+                                <button type="button" class="send-succes ms-2" @click.prevent="postTransaksi('<?php echo $id_produk?>',<?php echo $total?>, <?php echo $id?>)">Start Transaction</button>
                             </div>
 
                         </form>
@@ -109,57 +138,53 @@ include "inc/inc_fungsi.php";
                     <div class="container">
                         <div class="txt-sm">Your items</div>
                         <hr class="mb-3">
-                        <div class="mt-4 row align-items-end">
-                            <div class="col-3">
-                                <img src="asset/hero-2.png" style="max-width: 120px; min-width: 100px; min-height:100" alt="">
-                            </div>
-                            <div class="col-7">
-                                <div class="txt-xm text-dark">Tshirt Blue Jeans</div>
-                                <div class="form-text" style="font-size:12px">
-                                    Rp. 1678900
+                        <?php
+                        $sql1 = "select * from produk where id_produk IN ($id_produk)";
+                        $q1  = mysqli_query($koneksi, $sql1);
+                        while ($r1 = mysqli_fetch_assoc($q1)) {
+                        ?>
+
+                            <div class="mt-4 row align-items-end">
+                                <div class="col-3">
+                                    <img src="<?=$r1['image']?>" style="max-width: 80px; min-width: 80px; max-height:80px; min:height:80px" alt="">
+                                </div>
+                                <div class="col-7">
+                                    <div class="txt-xm text-dark"><?=$r1['name']?></div>
+                                    <div class="form-text" style="font-size:12px">
+                                    <?php
+                                        if($r1['discount'] == 0){
+                                            ?>
+                                                Rp. <?=$r1['price']?>
+                                            <?php
+                                        }else{
+                                                $realprice = $r1['price'] * (1-($r1['discount']/100));
+                                            ?>
+                                                Rp. <?=$realprice?>
+                                            <?php
+                                        }
+                                    ?>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-text">1 items</div>
                                 </div>
                             </div>
-                            <div class="col-2">
-                                <div class="form-text">1 items</div>
-                            </div>
-                        </div>
-                        <div class="mt-4 row align-items-end">
-                            <div class="col-3">
-                                <img src="asset/hero-2.png" style="max-width: 120px; min-width: 100px; min-height:100" alt="">
-                            </div>
-                            <div class="col-7">
-                                <div class="txt-xm text-dark">Tshirt Blue Jeans</div>
-                                <div class="form-text" style="font-size:12px">
-                                    Rp. 1678900
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-text">1 items</div>
-                            </div>
-                        </div>
-                        <div class="mt-4 row align-items-end">
-                            <div class="col-3">
-                                <img src="asset/hero-2.png" style="max-width: 120px; min-width: 100px; min-height:100" alt="">
-                            </div>
-                            <div class="col-7">
-                                <div class="txt-xm text-dark">Tshirt Blue Jeans</div>
-                                <div class="form-text" style="font-size:12px">
-                                    Rp. 1678900
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-text">1 items</div>
-                            </div>
-                        </div>
+
+                        <?php
+                        }
+                        ?>
+                     
+
                         <hr class="mt-4">
 
                         <!---total --->
 
                         <div class="form-text" style="font-size:12px">
-                            Rp. 1678900
+                           Total : Rp. <?=$total?>
                         </div>
                         <div class="form-text" style="font-size:12px">
-                            3 items
+                            <?=count($totalqty)?> items
                         </div>
 
                         <div class="mt-3">
@@ -167,8 +192,9 @@ include "inc/inc_fungsi.php";
                                 <div class="form-text">Wanna Cancel this Transaction? Click
                                     button</div>
                                 <form action="" method="POST" class="mt-2">
-                                    <button class="send" type="submit">Bring me back</button>
+                                    <button class="send" type="submit" name="back">Bring me back</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>
@@ -176,17 +202,15 @@ include "inc/inc_fungsi.php";
             </div>
         </div>
     </div>
-    
-  
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <?php
-    include "vue.php";
-    ?>
+    <?php include "vue.php"; ?>
 
 </body>
 

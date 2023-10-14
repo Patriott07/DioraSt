@@ -4,7 +4,56 @@ include "inc/inc_fungsi.php";
 session_start();
 $succes1 = "";
 $error = "";
+$id_produk = 0;
+$total = 0;
+//transaksi
+if (isset($_POST['test'])) {
+    //mengecek apakah checkbox kosong atau tidak
+    if (isset($_POST['checkout_item']) && is_array($_POST['checkout_item'])) {
+        //var_dump($_POST['checkout_item']);
 
+        $items = [];
+        $harga = 0;
+        $id_post = [];
+
+        foreach ($_POST['checkout_item'] as $data => $value) {
+            $id_pro = $value["'id'"]; //id
+            $id_post[] = $id_pro;
+            $sql1 = "select * from produk where id_produk = '$id_pro'";
+            $q1  = mysqli_query($koneksi, $sql1);
+            $r1  = mysqli_fetch_assoc($q1);
+
+            if ($r1['discount'] != 0) {
+                //lakukan logika kurang harga seusia diskon
+                $diskon = $r1['discount'] / 100;
+                $hargaDiskon = $r1['price'] * (1 - $r1['discount'] / 100);
+
+                $harga += intval($hargaDiskon);
+            } else {
+                $harga += $r1['price'];
+            }
+        }
+
+        var_dump($harga); //done harga
+
+        $id_post = implode(",", $id_post); //done
+        $id_post = ssl_encrypt($id_post);
+        $harga  = ssl_encrypt($harga);
+
+        var_dump($id_post); //done id
+        // $id_post = explode(",",$id_post);
+        //var_dump($id_post);
+
+
+
+        //task : masukan id ke sebuah data di vue
+
+        if (isset($id_post)) {
+            $_SESSION['transaksi'] = 1;
+            header("Location:form.php?i=$id_post&p=$harga");
+        }
+    }
+}
 
 if (!isset($_SESSION['id'])) {
     unset($_SESSION['id']);
@@ -476,12 +525,12 @@ if ($id == null || $id == "") {
                                 </div>
                             </div>
 
-                            <div class="container-fluid p-3 mb-0" style="background-color: #fff;">
+                            <div v-if="totCheckout!=0" class="container-fluid p-3 mb-0" style="background-color: #fff;">
                                 <div class="txt-xm form-text">Total : Rp. {{ totCheckout }}</div>
                                 <div class="txt-sm form-text" style="font-size: 12px;">Qty : {{ qtyCheckout }}</div>
                                 <hr>
                                 <div class="my-2 col-12 text-center">
-                                    <button class="btn-checkout txt-xm" type="submit" name="test" data-bs-toggle="modal" data-bs-target="#transaksiForm">
+                                    <button class="btn-checkout txt-xm" type="submit" name="test">
                                         Check out now
                                     </button>
                                 </div>
@@ -1148,65 +1197,6 @@ if ($id == null || $id == "") {
         </div>
 
         <!-- modal transaksi form Done -->
-
-        <?php
-        if (isset($_POST['test'])) {
-            //mengecek apakah checkbox kosong atau tidak
-
-            if (isset($_POST['checkout_item']) && is_array($_POST['checkout_item'])) {
-                //var_dump($_POST['checkout_item']);
-
-                $items = [];
-                $harga = 0;
-                $id_post = [];
-
-                foreach ($_POST['checkout_item'] as $data => $value) {
-                    $id_pro = $value["'id'"]; //id
-                    $id_post[] = $id_pro;
-                    $sql1 = "select * from produk where id_produk = '$id_pro'";
-                    $q1  = mysqli_query($koneksi, $sql1);
-                    $r1  = mysqli_fetch_assoc($q1);
-
-                    if ($r1['discount'] != 0) {
-                        //lakukan logika kurang harga seusia diskon
-                        $diskon = $r1['discount'] / 100;
-                        $hargaDiskon = $r1['price'] * (1 - $r1['discount'] / 100);
-
-                        $harga += intval($hargaDiskon);
-                    } else {
-                        $harga += $r1['price'];
-                    }
-                }
-
-                var_dump($harga); //done harga
-
-                $id_post = implode(",", $id_post); //done
-                var_dump($id_post); //done id
-                // $id_post = explode(",",$id_post);
-                var_dump($id_post);
-
-                //task : masukan id ke sebuah data di vue
-
-                if (isset($id_post)) {
-                echo '
-                    <script type="text/javascript">
-                        alert("oke");
-                        function trans(totalharga, idproduk) {
-                            const inputHarga = document.getElementById("form_total");
-                            const inputId = document.getElementById("form_idproduk");
-
-                            `inputHarga.value = "<?php echo $Harga?>"`;
-                            `inputId.value = "<?php echo $id_post?>"`;
-                        }
-                    </script>
-                    ';
-                
-                }
-            } else { //jika checkbox koosong
-                echo "<script></script>";
-            }
-        }
-        ?>
 
         <div class="modal fade" id="transaksiForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
