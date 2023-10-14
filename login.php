@@ -208,6 +208,24 @@ if (isset($_POST['login'])) {
             display: none;
         }
        }
+
+       @media screen and (521px < width > 870px) {
+
+        .login {
+            z-index: 33;
+            width: 100%;
+            height: 100vh;
+            border-radius: 5px;
+            background: #FFF;
+        }
+
+        .right-side{
+            display: none;
+        }
+
+    }
+
+
     </style>
 </head>
 
@@ -216,7 +234,7 @@ if (isset($_POST['login'])) {
     <header class="container-fluid" id="app">
         <div class="row">
             <!-- login -->
-            <div v-if="toggle.form" class="col-lg-4 col-12 col-md-8 offset-md-2 login">
+            <div v-if="toggle.form" class="col-lg-3 col-12 col-md-8 offset-md-4 login offset-lg-0">
                 <div class="container pt-5 pb-3 text-center">
                     <h6 style="font-size: 48px;">Diora</h6>
                     <div class="txt-sm">Login</div>
@@ -294,7 +312,7 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
             <!-- register -->
-            <div v-else class="col-lg-4 col-12 col-md-8 offset-md-2 login" name="register">
+            <div v-else class="col-lg-3 col-12 col-md-8 offset-md-4 offset-lg-0 login" name="register">
                 <div class="container pt-5 pb-3 text-center">
                     <h6 style="font-size: 48px;">Diora</h6>
                     <div class="txt-sm">Register</div>
@@ -357,7 +375,7 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
 
-            <div class="col-8 col-lg-8 col-md-6 position-relative right-side">
+            <div class="col-8 col-lg-8 position-relative right-side">
                 <div class="position-absolute translate-middle top-50 start-50">
                     <img style="width: 400px;" src="https://i.pinimg.com/originals/e4/e0/76/e4e076c273b1234de3cd3337a07640a0.gif" alt="">
                 </div>

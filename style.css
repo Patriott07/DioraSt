@@ -52,7 +52,7 @@ header {
 }
 
 header nav span.nav-span,
-.info .nav-span {
+.info .nav-span,span.nav-span {
     height: 39px !important;
     background-color: black;
     color: white;
@@ -409,4 +409,49 @@ footer a {
 }
 path.close:hover{
     fill: #FF2323!important;
+}
+
+.badge-cart{
+    border-radius: 15px;
+    background: #000;
+    color: white;
+    padding: 0.5rem;
+}
+
+.form-left{
+    background-color: #A67CFF;
+}
+.form-right{
+    background-color: #fff;
+}
+
+button.send{
+    color: #000;
+    padding: 10px 14px;
+    transition: all 0.3s;
+    border: none;
+    background: rgba(217, 217, 217, 0.00);
+    text-decoration: underline;
+}
+
+button.send:hover{
+    border-radius: 5px;
+    background: #000;
+    color: white;
+    text-decoration: none;
+}
+
+button.send-succes{
+    color: #ffffff;
+    padding: 8px 18px;
+    transition: all 0.3s;
+    border: none;
+    background: rgba(217, 217, 217, 0.00);
+}
+
+button.send-succes:hover{
+    border-radius: 5px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
 }

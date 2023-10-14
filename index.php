@@ -1,5 +1,6 @@
 <?php
 include "inc/inc_konek.php";
+include "inc/inc_fungsi.php";
 session_start();
 $succes1 = "";
 $error = "";
@@ -62,7 +63,6 @@ if ($id == null || $id == "") {
     <link href="https://fonts.googleapis.com/css2?family=Baumans&family=Bebas+Neue&family=Flamenco&family=Inter&family=Italiana&family=Josefin+Sans&family=Margarine&family=Martian+Mono&family=Megrim&family=Roboto+Mono:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- bosstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <style>
         .box-des {
             width: 292px;
@@ -169,7 +169,7 @@ if ($id == null || $id == "") {
                 height: 90vh;
                 width: 100%;
                 /* margin: 0px auto; */
-                
+
                 background-position: center;
 
             }
@@ -195,7 +195,7 @@ if ($id == null || $id == "") {
                 width: 100% !important;
             }
 
-            .diskon{
+            .diskon {
                 display: none;
             }
 
@@ -224,7 +224,46 @@ if ($id == null || $id == "") {
                 display: none;
             }
         }
+
+        /* Untuk checkbox yang belum dicentang */
+        input[type="checkbox"] {
+            background-color: black;
+            /* Warna latar belakang hitam */
+        }
+
+        /* Untuk checkbox yang sudah dicentang */
+        input[type="checkbox"]:checked {
+            background-color: black;
+            /* Warna latar belakang tetap hitam */
+        }
+
+        /* Untuk tanda ceklis pada checkbox yang sudah dicentang */
+        input[type="checkbox"]:checked::before {
+            content: '';
+            /* Tanda ceklis (✓) putih */
+            font-size: 18px;
+            /* Ukuran font tanda ceklis */
+            color: white;
+            /* Warna tanda ceklis putih */
+        }
+
+        .btn-checkout {
+            color: #050505;
+            border: 1px solid #000;
+            background: rgba(217, 217, 217, 0.00);
+            transition: all 0.3s;
+            padding: 10px 70px;
+        }
+
+        .btn-checkout:hover {
+            color: #fff;
+            border: 1px solid #000;
+            background: #000;
+            padding: 10px 80px;
+        }
     </style>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -350,61 +389,85 @@ if ($id == null || $id == "") {
                             <circle cx="16" cy="16" r="16" fill="#fff" />
                             <path class="cart" d="M25.2209 12H22.329L21.7127 7.9225C21.5885 7.30557 21.3158 6.73739 20.9234 6.2783C20.5311 5.8192 20.0339 5.48632 19.4845 5.315C18.9325 5.11834 18.3575 5.01222 17.7778 5H14.238C13.6583 5.01222 13.0833 5.11834 12.5313 5.315C11.9819 5.48632 11.4846 5.8192 11.0923 6.2783C10.7 6.73739 10.4273 7.30557 10.3031 7.9225L9.68682 12H6.79493C6.67046 11.9992 6.54758 12.0309 6.4363 12.0926C6.32501 12.1544 6.22846 12.2443 6.15452 12.3552C6.08059 12.4661 6.03135 12.5947 6.01082 12.7307C5.99029 12.8666 5.99906 13.006 6.0364 13.1375L9.0073 24.1625C9.15855 24.6951 9.45921 25.1604 9.8656 25.4909C10.272 25.8213 10.7629 25.9997 11.2671 26H20.7487C21.2502 25.996 21.7375 25.8159 22.1408 25.4857C22.544 25.1555 22.8422 24.6923 22.9927 24.1625L25.9636 13.1375C26.0005 13.0074 26.0095 12.8696 25.9898 12.735C25.9701 12.6004 25.9223 12.4727 25.8502 12.3622C25.778 12.2517 25.6835 12.1614 25.5743 12.0985C25.465 12.0356 25.344 12.0019 25.2209 12ZM11.2987 12L11.8676 8.2025C11.93 7.89244 12.0746 7.61012 12.283 7.39183C12.4914 7.17354 12.754 7.02924 13.037 6.9775C13.4257 6.841 13.8303 6.76575 14.238 6.75H17.7778C18.1902 6.764 18.5995 6.83925 18.9946 6.9775C19.2776 7.02924 19.5402 7.17354 19.7486 7.39183C19.957 7.61012 20.1016 7.89244 20.164 8.2025L20.7171 12H11.2355H11.2987Z" fill="black" />
                         </svg>
-                        <div class="dropdown-menu ue" style="width: 580px;">
+                        <form action="" method="post" class="dropdown-menu ue pb-0" style="width: 580px; background-color: #E4E4E4">
                             <!-- Dropdown Cart -->
                             <div class="container py-3">
                                 <div class="row mb-2">
                                     <div class="col-6">
-                                        <h5 class="txt-sm">Keranjang</h5>
+                                        <h5 class="txt-sm">
+                                            <span class="badge-cart">Keranjang</span>
+                                        </h5>
                                     </div>
                                     <div class="col-6 text-end">
-                                        <h5 class="txt-sm e">Close</h5>
+                                        <h5 class="txt-sm e text-light">Close</h5>
                                     </div>
                                 </div>
                                 <hr>
 
-                                <div style="overflow-y: auto; height: 80vh">
+                                <div style="overflow-y: auto; height: 55vh">
                                     <div class="d-flex-column">
                                         <?php
-
                                         $sql1 = "SELECT cart.*, produk.*, user.id FROM produk,cart,user WHERE cart.id_produk = produk.id_produk AND user.id = '$id' ORDER BY cart.id_cart DESC;";
                                         $q1 = mysqli_query($koneksi, $sql1);
                                         while ($r1 = mysqli_fetch_assoc($q1)) {
 
                                         ?>
-
-                                            <div class="row align-items-end mt-3">
-                                                <!--benarkan-->
-                                                <div class="col-12 text-end">
-                                                    <!-- hapus btn -->
-                                                    <svg @click="delCart(<?php echo $r1['id_cart'] ?>,'<?php echo $r1['name'] ?>')" class="delFav e" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                                        <path class="close" d="M6.363 4.95L11.313 0L12.728 1.415L7.778 6.365L12.728 11.315L11.313 12.729L6.363 7.779L1.413 12.729L0 11.314L4.95 6.364L0 1.414L1.413 0.00199986L6.363 4.952V4.95Z" fill="black" />
-                                                    </svg>
+                                            <div class="items-cart p-3 mb-4" style="background-color: #fff;">
+                                                <div class="row align-items-end">
+                                                    <!--benarkan-->
+                                                    <div class="col-12 text-end">
+                                                        <!-- hapus btn -->
+                                                        <svg @click="delCart(<?php echo $r1['id_cart'] ?>,'<?php echo $r1['name'] ?>')" class="delFav e" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                                            <path class="close" d="M6.363 4.95L11.313 0L12.728 1.415L7.778 6.365L12.728 11.315L11.313 12.729L6.363 7.779L1.413 12.729L0 11.314L4.95 6.364L0 1.414L1.413 0.00199986L6.363 4.952V4.95Z" fill="black" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row align-items-end my-3">
-                                                <div class="col-8">
-                                                    <div class="row align-items-end">
-                                                        <div class="col-5 text-center">
-                                                            <img class="img-fluid" style="border-radius: 10px;" src="<?php echo $r1['image'] ?>" alt="">
-                                                        </div>
-                                                        <div class="col-7 ps-1">
-                                                            <h5 class="txt-sm"><?php echo $r1['name'] ?></h5>
+                                                <div class="row align-items-end my-3">
+                                                    <div class="col-9">
+                                                        <div class="row align-items-end">
+                                                            <div class="col-4 text-center">
+                                                                <img class="img-fluid" style="border-radius: 10px; max-width:100px; max-height:100px" src="<?php echo $r1['image'] ?>" alt="">
+                                                            </div>
+                                                            <div class="col-8 ps-1">
+                                                                <h5 class="txt-sm"><?php echo $r1['name'] ?></h5>
 
-                                                            <span class="txt-xm">Rp : <?php echo $r1['price'] ?></span>
+                                                                <span class="txt-xm">Rp : <?php
+                                                                                            if ($r1['discount'] != 0) {
+                                                                                                $realprice = $r1['price'] * (1 - ($r1['discount'] / 100));
+                                                                                                echo $realprice;
+                                                                                            } else {
+                                                                                                echo $r1['price'];
+                                                                                            } ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <!-- <div class="btn btn-cart-2" @click.prevent='testApi("", "", "", <?php echo $r1['id_produk'] ?>)' data-bs-toggle="modal" data-bs-target="#transaksiForm">
+                                                            Buy now
+                                                        </div> -->
+
+                                                        <div class="form-check">
+                                                            <input @click="addTotalCheckout($event,
+                                                            <?php
+                                                            if ($r1['discount'] != 0) {
+                                                                $realprice = $r1['price'] * (1 - ($r1['discount'] / 100));
+                                                                echo $realprice;
+                                                            } else {
+                                                                echo $r1['price'];
+                                                            }
+                                                            ?>)" class="form-check-input" type="checkbox" name="checkout_item[]['id']" value="<?= $r1['id_produk'] ?>" id="defaultCheck1">
+                                                            <label class="form-check-label" for="defaultCheck1">
+                                                                pay now
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-4 text-end">
-                                                    <div class="btn btn-cart-2" @click.prevent='testApi("", "", "", <?php echo $r1['id_produk'] ?>)' data-bs-toggle="modal" data-bs-target="#transaksiForm">
-                                                        Buy now
-                                                    </div>
+                                                <!-- <div class="text-start form-text mb-3">
+                                                    <?php //echo $r1['deskripsi'] 
+                                                    ?>
                                                 </div>
+                                                <hr> -->
                                             </div>
-                                            <div class="text-start form-text mb-3">
-                                                <?php echo $r1['deskripsi'] ?>
-                                            </div>
-                                            <hr>
                                         <?php
                                         }
                                         ?>
@@ -412,8 +475,20 @@ if ($id == null || $id == "") {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="container-fluid p-3 mb-0" style="background-color: #fff;">
+                                <div class="txt-xm form-text">Total : Rp. {{ totCheckout }}</div>
+                                <div class="txt-sm form-text" style="font-size: 12px;">Qty : {{ qtyCheckout }}</div>
+                                <hr>
+                                <div class="my-2 col-12 text-center">
+                                    <button class="btn-checkout txt-xm" type="submit" name="test" data-bs-toggle="modal" data-bs-target="#transaksiForm">
+                                        Check out now
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </span>
+
 
                     <?php
                     $sql1 = "select * from user where id = '$id'";
@@ -1074,8 +1149,68 @@ if ($id == null || $id == "") {
 
         <!-- modal transaksi form Done -->
 
+        <?php
+        if (isset($_POST['test'])) {
+            //mengecek apakah checkbox kosong atau tidak
+
+            if (isset($_POST['checkout_item']) && is_array($_POST['checkout_item'])) {
+                //var_dump($_POST['checkout_item']);
+
+                $items = [];
+                $harga = 0;
+                $id_post = [];
+
+                foreach ($_POST['checkout_item'] as $data => $value) {
+                    $id_pro = $value["'id'"]; //id
+                    $id_post[] = $id_pro;
+                    $sql1 = "select * from produk where id_produk = '$id_pro'";
+                    $q1  = mysqli_query($koneksi, $sql1);
+                    $r1  = mysqli_fetch_assoc($q1);
+
+                    if ($r1['discount'] != 0) {
+                        //lakukan logika kurang harga seusia diskon
+                        $diskon = $r1['discount'] / 100;
+                        $hargaDiskon = $r1['price'] * (1 - $r1['discount'] / 100);
+
+                        $harga += intval($hargaDiskon);
+                    } else {
+                        $harga += $r1['price'];
+                    }
+                }
+
+                var_dump($harga); //done harga
+
+                $id_post = implode(",", $id_post); //done
+                var_dump($id_post); //done id
+                // $id_post = explode(",",$id_post);
+                var_dump($id_post);
+
+                //task : masukan id ke sebuah data di vue
+
+                if (isset($id_post)) {
+                echo '
+                    <script type="text/javascript">
+                        alert("oke");
+                        function trans(totalharga, idproduk) {
+                            const inputHarga = document.getElementById("form_total");
+                            const inputId = document.getElementById("form_idproduk");
+
+                            `inputHarga.value = "<?php echo $Harga?>"`;
+                            `inputId.value = "<?php echo $id_post?>"`;
+                        }
+                    </script>
+                    ';
+                
+                }
+            } else { //jika checkbox koosong
+                echo "<script></script>";
+            }
+        }
+        ?>
+
         <div class="modal fade" id="transaksiForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
+
                 <form method="POST">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -1084,21 +1219,25 @@ if ($id == null || $id == "") {
                         </div>
                         <div class="modal-body">
                             <div style="height: 300px; background-size: cover; background-position: center;" :style="{ 'background-image': 'url(' + dataApi.dataBarangTransaksi.image + ')' }"></div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Name Product :</label>
                                 <input readonly type="text" class="form-control" id="" :value="dataApi.dataBarangTransaksi.name">
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Harga Yang harus di bayar :</label>
-                                        <input readonly type="text" class="form-control" id="recipient-name" :value="dataApi.dataBarangTransaksi.price * (1- dataApi.dataBarangTransaksi.discount / 100)">
+                                        <input readonly type="text" class="form-control" id="form_total" value="<?php if (isset($_POST['test'])) {
+                                                                                                                    echo $harga;
+                                                                                                                } ?>">
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="recipient-name" class="col-form-label">Code Produk :</label>
-                                        <input readonly type="text" class="form-control" name="form_id_produk" id="form_idproduk" :value="dataApi.dataBarangTransaksi.id_produk">
+                                        <input readonly type="text" class="form-control" name="form_id_produk" id="form_idproduk" value="<?php if (isset($_POST['test'])) {
+                                                                                                                                                echo $id_post;
+                                                                                                                                            } ?>">
                                     </div>
                                 </div>
                             </div>
@@ -1112,7 +1251,6 @@ if ($id == null || $id == "") {
                             <div class="mb-3">
                                 <label for="disabledSelect" class="form-label">Metode Payment</label>
                                 <select id="form_via" class="form-select" name="form_via">
-                                    <option value="">Payment Method</option>
                                     <option value="E-Banking">E-Banking</option>
                                     <option value="Paypal">Paypal</option>
                                     <option value="COD">COD</option>
@@ -1159,469 +1297,9 @@ if ($id == null || $id == "") {
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
 
 
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    account: {
-                        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOH2aZnIHWjMQj2lQUOWIL2f4Hljgab0ecZQ&usqp=CAU",
-                        username: "Patriotto",
-                        gmail: "Pwangtampn@gmail.com",
-                        description: "Describing our self its a important for the better life. and passion is our power"
-                    },
-                    dataApi: {
-                        url: "",
-                        data: [
-
-                        ],
-                        dataBarangTransaksi: [],
-                        dataFavTop: [
-
-                        ],
-                        dataFilter: [
-
-                        ],
-                        dataModal: {
-                            name: "",
-                            brand: "",
-                            price: "",
-                            discount: "",
-                            description: "",
-                            image: "",
-                            detail: {
-                                titleSpan: "",
-                                count: "",
-                                category: ""
-                            }
-                        }
-                    },
-                    loop: {
-                        header: false
-                    },
-                    toggle: {
-                        clothes: false,
-                        shoes: false,
-                        load: false,
-                        info: false
-                    },
-                    msg: {
-                        info: null,
-                        kondisi: null
-                    },
-                    isDesktopView: true,
-                    isTabletView: false,
-
-                }
-            },
-
-            computed: {
-                getday() {
-                    const nowDate = new Date();
-                    return nowDate.getUTCDate() + " / " + nowDate.getMonth() + " / " + nowDate.getFullYear();
-                }
-            },
-
-            methods: {
-                strtolink(str) {
-                    return str.replace(/\s/g, "");
-                },
-                postTransaksi() {
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "Make sure to choose right payment method And Make a detail about your location (We will Protect) so your package will arrive on your addres",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#0EFD09',
-                        cancelButtonColor: '#A39999',
-                        confirmButtonText: 'Yes, pay now',
-                        focusConfirm: false
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            Swal.fire(
-                                'Nice',
-                                'Thanks For trusting us, i will make a struk for you',
-                                'success'
-                            );
-                            setTimeout(() => {
-
-                            }, 2500)
-                            var url = "http://localhost/projek/DioraSt/db/postTransaksi.php";
-
-                            axios.post(url, {
-                                    id: <?php echo $id ?>,
-                                    idproduk: document.getElementById("form_idproduk").value,
-                                    penerima: document.getElementById("form_penerima").value,
-                                    via: document.getElementById("form_via").value,
-                                    alamat: document.getElementById("form_alamat").value,
-
-                                }, {
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                    },
-                                })
-                                .then(response => {
-                                    console.log(response);
-                                    if (response.data.message == "Oke masuk data") {
-                                        // Gabungkan parameter-parameter GET ke dalam URL
-                                        var urlBaru = "http://localhost/projek/DioraSt/data/laporan.php?idTran=" + response.data.param;
-                                        // Mengarahkan browser ke URL baru
-                                        window.location.href = urlBaru;
-                                    }
-                                })
-                        }
-                    })
-
-
-
-                },
-                getFavTop(id_user) {
-                    var url = "http://localhost/projek/DioraSt/db/getFav.php";
-                    axios.get(url, {
-                        params: {
-                            id_user: id_user
-                        }
-                    }).then(response => {
-
-                        console.log(response.data);
-                        this.dataApi.dataFavTop = response.data;
-                    });
-
-                },
-                delCart(id, name) { //Done
-
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "Wanna Delete your Product from Cart?",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            var urlDelFav = "http://localhost/projek/DioraSt/db/delCart.php";
-                            axios.post(urlDelFav, {
-                                        id_fav: id
-                                    }, {
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                        }
-                                    }
-
-                                )
-                                .then(response => {
-                                    Swal.fire(
-                                        '',
-                                        'Deleted Complete',
-                                        'info'
-                                    );
-                                    setTimeout(() => {
-                                        location.reload();
-                                    }, 1000)
-                                })
-                        } else {
-                            Swal.fire(
-                                'Good',
-                                'Your items still save now',
-                                'info'
-                            )
-                        }
-                    })
-                },
-                delFav(id, name) { //DOne
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "Wanna Delete your Product from Cart?",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            var urlDelFav = "http://localhost/projek/DioraSt/db/delFav.php";
-                            axios.post(urlDelFav, {
-                                        id_fav: id
-                                    }, {
-                                        headers: {
-                                            'Content-Type': 'application/json',
-                                        }
-                                    }
-
-                                )
-                                .then(response => {
-                                    Swal.fire(
-                                        '',
-                                        'Deleted Complete',
-                                        'info'
-                                    );
-                                    setTimeout(() => {
-                                        location.reload();
-                                    }, 1000)
-                                })
-                        } else {
-                            Swal.fire(
-                                'Good',
-                                'Your items still save now',
-                                'info'
-                            );
-                        }
-                    });
-                },
-                testPostCart(id_user, id_produk, type) {
-                    axios.post("http://localhost/projek/DioraSt/db/postFav.php", {
-                            id_user: id_user,
-                            id_produk: id_produk,
-                            type: type
-                            // tanggal : this.getday
-                        }, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                        })
-                        .then(response => {
-                            const stat = response.data.status;
-                            if (stat == "OK") {
-                                Swal.fire({
-                                    title: 'Great, your items in cart now',
-                                    text: "To See it, you must restart the page",
-                                    icon: 'success',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#A67CFF',
-                                    cancelButtonColor: '#3c3c3c',
-                                    confirmButtonText: 'Yes, Restart Now',
-                                    cancelButtonText: 'No, Thanks'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        location.reload(true);
-                                        window.scrollTo(0, 0);
-                                    }
-                                })
-                            } else {
-                                Swal.fire({
-                                    title: 'Malfunction',
-                                    text: "Maybe you have this items on your Cart",
-                                    icon: 'error',
-                                    showCancelButton: false,
-                                    confirmButtonColor: '#3c3c3c',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'Okey',
-
-                                })
-                            }
-                        })
-                        .catch(error => console.log(error));
-                },
-                testPostFav(id_user, id_produk, type) {
-                    axios.post("http://localhost/projek/DioraSt/db/postFav.php", {
-                            id_user: id_user,
-                            id_produk: id_produk,
-                            type: type
-                            // tanggal : this.getday
-                        }, {
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                        })
-                        .then(response => {
-
-                            this.msg.info = response.data.message;
-                            const stat = response.data.status;
-                            if (stat == "OK") {
-                                Swal.fire({
-                                    title: 'Great your items in favorite now',
-                                    text: "To See it, you must restart the page",
-                                    icon: 'success',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#A67CFF',
-                                    cancelButtonColor: '#3c3c3c',
-                                    confirmButtonText: 'Yes, Restart Now',
-                                    cancelButtonText: 'No, Thanks'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        location.reload(true);
-                                        window.scrollTo(0, 0);
-                                    }
-                                })
-                            } else {
-                                Swal.fire({
-                                    title: 'Malfunction',
-                                    text: "Maybe you have this items on your Favorite",
-                                    icon: 'error',
-                                    showCancelButton: false,
-                                    confirmButtonColor: '#3c3c3c',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'Okey',
-
-                                });
-                            }
-                        })
-                        .catch(error => console.log(error));
-                },
-                // getProduk(){
-                //     const url = "http://localhost/projek/DioraSt/db/getProduk.php";
-                //     axios.get(url,{
-                //         params : {
-
-                //         }
-                //     }).then(response => {
-                //         console.log(response);
-                //         this.dataApi.data = response.data;
-                //     });
-                // },
-                toggleColor(e) {
-                    const toggle = document.getElementsByClassName('toggle-shop')
-                    console.log(e);
-                    Array.from(toggle).forEach(element => {
-                        element.style.color = "black";
-                    });
-                    e.target.style.color = "blue";
-                },
-                testApi(parent, req, key, id = "") {
-                    //const url = "data.json";
-
-                    const url = "http://localhost/projek/DioraSt/db/getProduk.php";
-                    console.log(parent);
-                    console.log(req);
-                    console.log(key);
-                    if (id == "") {
-                        axios.get(url, {
-                            params: {
-
-                            }
-                        }).then(response => {
-                            this.dataApi.data = response.data.product;
-                            console.log(response);
-                            this.loadScreen();
-                            // console.log(this.dataApi.data);
-                            if (parent === undefined || req === undefined || key === undefined) {
-                                document.getElementById("judulTab").innerHTML = "Diora St";
-                                this.dataApi.data = response.data.product[0];
-                                this.dataApi.dataFilter = [];
-                                // console.log(this.dataApi.data);
-                            } else if (req != undefined) {
-                                document.getElementById("judulTab").innerHTML = "Diora | " + req;
-                                const filteredData = this.dataApi.data.reduce((result, category) => {
-                                    // console.log(category); //data
-                                    // console.log(result); //[]
-                                    const products = Object.values(category)[key]; //ini memfilter sesuai dengan KAtegori apakah BAJU/SEPATU
-                                    console.log(products);
-                                    const filteredProducts = products.filter(product => product.detail.titleSpan.includes(req));
-                                    this.dataApi.dataFilter = filteredProducts;
-                                }, []);
-
-                            }
-
-
-                        }).catch(error => console.log(error));
-                    } else {
-                        axios.get(url, {
-                            params: {
-                                id_produk: id
-                            }
-                        }).then(response => {
-                            this.dataApi.dataBarangTransaksi = response.data;
-                            console.log(this.dataApi.dataBarangTransaksi);
-                        })
-                    }
-                },
-
-                loopHeader() {
-                    this.loop.header = !this.loop.header;
-                },
-                checkScreenSize() {
-                    // Fungsi untuk memeriksa ukuran layar dan mengubah nilai isDesktopView dan isTabletView sesuai kebutuhan
-                    const screenWidth = window.innerWidth;
-                    this.isDesktopView = screenWidth >= 992; // Ukuran desktop dalam Bootstrap adalah 992px
-                    this.isTabletView = screenWidth < 992; // Ukuran tablet adalah kurang dari 992px
-                },
-                loadScreen() {
-                    this.toggle.load = true;
-                    setTimeout(() => {
-                        this.toggle.load = false;
-                    }, 600)
-                },
-                favoritF(index) {
-                    this.msg.kondisi = "Ke Dalam Daftar Favorit"
-                    this.msg.info = this.dataApi.dataFilter[index].name;
-                    this.toggle.info = true;
-                    setTimeout(() => {
-                        this.toggle.info = false;
-                    }, 2000);
-
-                    // var nama = this.dataApi.dataFilter[index].name;
-                    // var des = this.dataApi.dataFilter[index].description;
-                    // var img = this.dataApi.dataFilter[index].image;
-                    // var price = this.dataApi.dataFilter[index].price;
-
-                    this.testPostFav(id_user, id_produk);
-                    var toastEl = document.querySelector('.toast');
-                    var toast = new bootstrap.Toast(toastEl);
-                    toast.show({
-                        delay: 400
-                    });
-                },
-                cartF(index) {
-                    this.msg.kondisi = "Ke Dalam Daftar Keranjang"
-                    this.msg.info = this.dataApi.dataFilter[index].name;
-                    this.toggle.info = true;
-                    setTimeout(() => {
-                        this.toggle.info = false;
-                    }, 2000);
-                },
-                favorit(index, parent, id_user, id_produk, type) {
-                    // console.log(this.dataApi.data[parent][index]);
-                    this.toggle.info = true;
-
-                    this.testPostFav(id_user, id_produk, type);
-
-                },
-                cart(index, parent, id_user, id_produk, type) {
-
-                    this.testPostCart(id_user, id_produk, type);
-                },
-                getDataModal(index, parent, category) {
-                    if (parent == 'filter') {
-                        this.dataApi.dataModal = this.dataApi.dataFilter[index];
-                    } else if (parent == 'all') {
-                        this.dataApi.dataModal = this.dataApi.data[category][index];
-                        console.log(this.dataApi.dataModal);
-                    }
-                },
-                resetBtn(id) {
-                    document.getElementById(id).value = "";
-                }
-            },
-            mounted: function() {
-                // this.testPostFav();
-                this.checkScreenSize();
-                window.addEventListener('resize', this.checkScreenSize);
-
-                setInterval(() => {
-                    this.loopHeader();
-                }, 1000 * 3)
-            },
-            beforeDestroy: function() {
-                // Jangan lupa untuk menghapus event listener saat komponen dihapus dari DOM
-                window.removeEventListener('resize', this.checkScreenSize);
-            },
-            beforeCreate() {
-
-            },
-            created() {
-                this.testApi();
-                // this.getProduk();
-                this.getFavTop(<?php echo $id ?>)
-            }
-
-
-        })
-
-        app.mount('#app');
-    </script>
+    <?php include 'vue.php'; ?>
 </body>
 
 </html>
