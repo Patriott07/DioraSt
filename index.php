@@ -6,6 +6,7 @@ $succes1 = "";
 $error = "";
 $id_produk = 0;
 $total = 0;
+
 //transaksi
 if (isset($_POST['test'])) {
     //mengecek apakah checkbox kosong atau tidak
@@ -43,8 +44,6 @@ if (isset($_POST['test'])) {
         var_dump($id_post); //done id
         // $id_post = explode(",",$id_post);
         //var_dump($id_post);
-
-
 
         //task : masukan id ke sebuah data di vue
 
@@ -448,7 +447,8 @@ if ($id == null || $id == "") {
                                         </h5>
                                     </div>
                                     <div class="col-6 text-end">
-                                        <h5 class="txt-sm e text-light">Close</h5>
+                                        <h5 class="txt-sm e text-dark">Close</h5>
+                                        <!-- array coulumn to get key from assoc array, number_format untuk tampilan harga -->
                                     </div>
                                 </div>
                                 <hr>
@@ -473,6 +473,7 @@ if ($id == null || $id == "") {
                                                 </div>
                                                 <div class="row align-items-end my-3">
                                                     <div class="col-9">
+                                                        <!-- checkoutbar -->
                                                         <div class="row align-items-end">
                                                             <div class="col-4 text-center">
                                                                 <img class="img-fluid" style="border-radius: 10px; max-width:100px; max-height:100px" src="<?php echo $r1['image'] ?>" alt="">
@@ -548,6 +549,7 @@ if ($id == null || $id == "") {
                     ?>
 
                     <!-- nav photos -->
+                    <!-- addpackage -->
                     <span class="ms-2 e dropdown btn-group">
                         <img class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 100%;width: 60px; height:60px;" src="<?php echo $r1['img'] ?>" alt="">
                         <div class="dropdown-menu mt-2 ue container text-center pt-5 pb-4" style="width: 350px!important;">
@@ -571,7 +573,7 @@ if ($id == null || $id == "") {
                                         </div>
                                     </div>
 
-                                    <div class="row align-items-end text-start py-2" style="border-bottom: 1px solid #898787;">
+                                    <!-- <div class="row align-items-end text-start py-2" style="border-bottom: 1px solid #898787;">
                                         <div class="col-12 e" data-bs-toggle="modal" data-bs-target="#exampleModalPayment" data-bs-whatever="@mdo">
                                             <div class="" style="font-size: 14px;">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
@@ -580,9 +582,20 @@ if ($id == null || $id == "") {
                                                 <span class="pt-2 ps-2">History Payment</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
+                                    <div class="row align-items-end text-start py-2" style="border-bottom: 1px solid #898787;">
+                                        <div class="col-12 e" data-bs-toggle="modal" data-bs-target="#exampleModalPayment" data-bs-whatever="@mdo">
+                                            <div class="" style="font-size: 14px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" viewBox="0 0 25 26" fill="none">
+                                                    <path d="M21.8437 6.71836L13.25 1.82813C13.0204 1.69618 12.7623 1.62697 12.5 1.62697C12.2377 1.62697 11.9796 1.69618 11.75 1.82813L3.15625 6.72039C2.91083 6.86005 2.70596 7.06567 2.56304 7.31578C2.42012 7.56589 2.34439 7.85132 2.34375 8.14227V17.8557C2.34439 18.1467 2.42012 18.4321 2.56304 18.6822C2.70596 18.9323 2.91083 19.1379 3.15625 19.2776L11.75 24.1698C11.9796 24.3018 12.2377 24.371 12.5 24.371C12.7623 24.371 13.0204 24.3018 13.25 24.1698L21.8437 19.2776C22.0892 19.1379 22.294 18.9323 22.437 18.6822C22.5799 18.4321 22.6556 18.1467 22.6562 17.8557V8.14328C22.6561 7.85182 22.5807 7.56575 22.4377 7.31506C22.2948 7.06436 22.0896 6.85826 21.8437 6.71836ZM12.5 3.25L20.3457 7.71875L17.4385 9.37422L9.5918 4.90547L12.5 3.25ZM12.5 12.1875L4.6543 7.71875L7.96484 5.83375L15.8105 10.3025L12.5 12.1875ZM3.90625 9.14063L11.7188 13.587V22.3001L3.90625 17.8567V9.14063ZM21.0938 17.8527L13.2812 22.3001V13.5911L16.4062 11.8127V15.4375C16.4062 15.653 16.4886 15.8597 16.6351 16.012C16.7816 16.1644 16.9803 16.25 17.1875 16.25C17.3947 16.25 17.5934 16.1644 17.7399 16.012C17.8864 15.8597 17.9688 15.653 17.9688 15.4375V10.9231L21.0938 9.14063V17.8516V17.8527Z" fill="black" />
+                                                </svg>
+                                                <span class="pt-2 ps-2">My package</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                
                                 <div class="container mb-4">
                                     <div class="row align-items-end text-start py-2">
                                         <form action="" method="POST" class="text-center">

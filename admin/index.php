@@ -187,7 +187,7 @@ if (isset($_POST['cart_update'])) {
         $r1 = mysqli_fetch_assoc($q1);
         ?>
         <div class="row" id="ASC" name="<?php echo $r1['verifikasi_kode'] ?>">
-            <div class="col-3 left-bar pb-5 pt-3" style="height: 110vh;">
+            <div class="col-lg-3 col-md-4 left-bar pb-5 pt-3" style="height: 110vh;">
                 <div class="text-end p-2 mb-3">
                     <form action="" method="post">
                         <button name="logout" type="submit" class="btn-self" onclick="return confirm('Yakin ingin meninggalkan halaman?')">Log out now</button>
@@ -231,7 +231,7 @@ if (isset($_POST['cart_update'])) {
                     </ul>
                 </div>
             </div>
-            <div class="col-9 right-bar container-fluid m-0 p-0 position-relative px-5" style="height: 110vh;">
+            <div class="col-lg-9 col-md-8 right-bar container-fluid m-0 p-0 position-relative px-5" style="height: 110vh;">
 
                 <div class="position-absolute" style="left: 30px; top: 30px;">
                     <span class="kondisi py-2 px-3">
